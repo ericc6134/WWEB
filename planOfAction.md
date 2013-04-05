@@ -12,7 +12,7 @@ Down the road: <br>
 -Graphs to track quiz scores<br>
 
 
-Division of Labor:
+Division of Labor: <br>
 Eirc: API / Database <br>
 Bernae: API / Database <br> 
 Wilsohn: Chrome Extension / CSS <br>
