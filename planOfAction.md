@@ -13,7 +13,7 @@ Down the road: <br>
 
 
 Division of Labor:
-Eirc: API / Database
-Bernae: API / Database
-Wilsohn: Chrome Extension / CSS
-Win: Chrome Extension / Replacement stuff
+Eirc: API / Database <br>
+Bernae: API / Database <br> 
+Wilsohn: Chrome Extension / CSS <br>
+Win: Chrome Extension / Replacement stuff <br>
