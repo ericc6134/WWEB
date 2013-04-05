@@ -10,3 +10,10 @@ Down the road: <br>
 -Vocab lists (either hardcoded or from an API)<br>
 -Website with accounts (mongo.db) and quizes<br>
 -Graphs to track quiz scores<br>
+
+
+Division of Labor:
+Eirc: API / Database
+Bernae: API / Database
+Wilsohn: Chrome Extension / CSS
+Win: Chrome Extension / Replacement stuff
