@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+
+<body>
+
+<p>Hello.</p>
+<button id="tword" onclick="myFn()">Translate!</button>
+
+
+
+
+
+<script src="../jquery-1.9.1.min.js">
+</script>
+<script>
+var eng = true;
+
+function myFn(){
+	if (eng){
+		var ans = $('p').text("Hola.");
+		eng = false;
+	}
+	else {
+		var ans = $('p').text("Hello.");
+		eng = true;
+	}
+	console.log(ans);
+}
+
+
+</script>
+
+
+</body>
+
+
+
+
+
+
+
+

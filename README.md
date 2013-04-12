@@ -30,3 +30,8 @@ By the Friday after that:
  - the things detailed on the detailed plan of action we'll have by the Friday we get back from break
 
 >>>>>>> e7db3b724bc2a5ab6d94bb0f96b347323d81f752
+
+By 4/5: Nothing was done, except planOfAction.md
+
+
+
