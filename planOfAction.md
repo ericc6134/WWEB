@@ -7,8 +7,8 @@ By Friday 4/12/13: <br>
 -Write code that will substitute translated word for original word for every instance in a body of text (and eventually a webpage)<br>
 <br>
 Down the road: <br>
--Vocab lists (either hardcoded or from an API)<br>
--Website with accounts (mongo.db) and quizes<br>
+-Vocab lists (either get common words from a bunch of Project Gutenberg or find vocab list online)<br>
+-Website with accounts (mongo.db) and quizes *or* have the quizzes inside the extension<br>
 -Graphs to track quiz scores<br>
 
 
