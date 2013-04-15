@@ -23,6 +23,18 @@ def find(params):
     return found
 
     #print w + " and " + t
+    
+#the following finds all sentences rather than trying to pick out only sentences with the word
+def sentences(params):
+    w = params['word']
+    t = params['text']
+
+    sentenceFind = re.compile('([A-Z][^\.?!]*[\.?!])')
+    found = re.findall(sentenceFind,t)
+    
+    print found
+    return found
+
 
 #testing:
 txt = openText("emperor.txt")
