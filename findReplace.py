@@ -2,12 +2,20 @@ import re
 
 #opens the text file and returns it as one string
 def openText(txt):
-    t = ""
     l = open(txt).readlines()
-    for line in l:
-        t = t + line
 
-    return t
+    return l
+
+def stringify(lst):
+    s = ""
+    for line in lst:
+        s = s + line
+
+    return s
+
+#testing:
+txt = stringify(openText("emperor.txt"))
+p = {'word': "old", 'text': txt, 'words': ["new","all"]}
 
 #the following finds every sentence with the word in question but gives quite a bit more than you need
 #params should have {'word': *word*, 'text' : *text to search*}
@@ -23,7 +31,7 @@ def find(params):
     return found
 
     #print w + " and " + t
-    
+
 #the following finds all sentences rather than trying to pick out only sentences with the word
 def sentences(params):
     w = params['word']
@@ -32,14 +40,44 @@ def sentences(params):
     sentenceFind = re.compile('([A-Z][^\.?!]*[\.?!])')
     found = re.findall(sentenceFind,t)
     
-    print found
+    #print found
     return found
 
+#print "find(p): "
+#find(p)
 
-#testing:
-txt = openText("emperor.txt")
-p = {'word': "old", 'text': txt}
+#print "sentences(p): "
+#sentences(p)
 
-find(p)
+def sentencesToTranslate(params):
+    s = sentences(params)
+    word = params['word']
+    output = []
+    
+    for i in s:
+        if word in i.split():
+            output.append(i)
 
-#print txt
+    print output
+    return output
+
+print "sentencesToTranslate(p): "
+sentencesToTranslate(p)
+
+#returns a list of sentences that contain any of the words that are passed as part of params
+def sentencesToTranslate2(params):
+    s = sentences(params)
+    words = params['words']
+    output = []
+    
+    for i in s:
+        for word in words:
+            if word in i.split():
+                if not(i in output):
+                    output.append(i)
+
+    print output
+    return output
+
+print "sentencesToTranslate2(p): "
+sentencesToTranslate2(p)
