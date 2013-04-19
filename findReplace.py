@@ -1,4 +1,5 @@
 import re
+#import nltk
 
 #opens the text file and returns it as one string
 def openText(txt):
@@ -47,8 +48,6 @@ def find(params):
     print found
     return found
 
-    #print w + " and " + t
-
 #the following finds all sentences rather than trying to pick out only sentences with the word
 def sentences(params):
     t = params['text']
@@ -56,7 +55,6 @@ def sentences(params):
     sentenceFind = re.compile('([A-Z][^\.?!";:]*[\.?!])')
     found = re.findall(sentenceFind,t)
     
-    #print found
     return found
 
 def sentencesToTranslate(params):
@@ -70,9 +68,6 @@ def sentencesToTranslate(params):
 
     print output
     return output
-
-print "sentencesToTranslate(p): "
-sentencesToTranslate(p)
 
 #returns a list of sentences that contain any of the words that are passed as part of params
 def sentencesToTranslate2(params):
@@ -90,10 +85,11 @@ def sentencesToTranslate2(params):
     print output
     return output
 
+
 b = {'words': ["bomb","Boston"],'word': "nada", 'text':cleanUp(stringify(openText("boston.txt")))}
 
 
-print b['text']
+#print b['text']
 print "sentences(b): "
 sentences(b)
 print "sentencesToTranslate2(b): "
