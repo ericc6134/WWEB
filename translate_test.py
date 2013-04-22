@@ -3,7 +3,8 @@ from microsofttranslator import Translator
 t = Translator("WWEB","ml7-win-wilson-eric-bernie")
 #            ClientID, Client Secret
 for w in "It is just a flesh elephant water".split(" "):
-    print t.translate(w,"es")
+#    print t.translate(w,"es")
+    print "Keeping this here so as not to waste our characters"
 
 # OBSERVATIONS:
 
