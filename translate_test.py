@@ -5,6 +5,9 @@ t = Translator("WWEB","ml7-win-wilson-eric-bernie")
 for w in "It is just a flesh elephant water".split(" "):
 #    print t.translate(w,"es")
     pass
+    print "Keeping this here so as not to waste our characters"
+
+>>>>>>> 73aff310c3cbd81e3ff859a4365ce15c708d562a
 # OBSERVATIONS:
 
 # Each translation deducts from my quota of 2,000,000 characters per month.

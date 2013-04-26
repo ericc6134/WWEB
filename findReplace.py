@@ -1,6 +1,15 @@
 import re
+import urllib
+#import translate
 #import nltk
 
+def getPage(url):
+    file = urllib.urlopen(url)
+    raw = file.read()
+    s = str(raw)
+    
+    return s
+    
 #opens the text file and returns it as one string
 def openText(txt):
     l = open(txt).readlines()
@@ -85,6 +94,42 @@ def sentencesToTranslate2(params):
     print output
     return output
 
+#params must include the orignal text as 'text', and a list of tuples with the original sentence at s[0] and the translated sentence at s[1] as 'sentences'
+def replace(params):
+    oldText = params['text']
+    sentences = params['sentences']
+    newText = ""
+    
+    for s in sentences:
+        findOld = re.compile(str(s[0]))
+        newText = re.sub(findOld,str(s[1]),oldText)
+        oldText = newText
+        
+    return newText
+        
+#takes params as a parameter which must include a url, text, or string, as well as a word list
+def newPage(params)
+    if params['url']:
+        s = getPage(params['url'])
+    elif params['text']:
+        s = openText(params['url'])
+    elif params['string']:
+        s = params['string']
+    else:
+        return "Error: Nothing to translate"
+    
+    words = params['words']
+    text = cleanUp(stringify(s))
+    
+    p = {'words': words, 'text': text, 'sentencesToTranslate': []}
+    sentences = sentencesToTranslate2(p)
+    p['sentencesToTranslate'] = sentences
+    
+    #at this point p will be sent to the translate code
+    #newData = translate.doSomething(p)
+    
+    #this method is not done, for now it returns p; eventually it will return the new page as a string
+    return p
 
 b = {'words': ["bomb","Boston"],'word': "nada", 'text':cleanUp(stringify(openText("boston.txt")))}
 
