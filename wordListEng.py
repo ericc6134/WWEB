@@ -6,7 +6,7 @@ s = open("texts/lm.txt", "r").readlines()
 s = [ a.translate(string.maketrans("",""), string.punctuation).strip().upper() for a in s if a != '']
 #print s
 words = [ a.split(" ") for a in s ]
-words = [ w for s in words for w in s ]
+words = [ w for s in words for w in s if w != "" ]
 
 
 def createWordList():
@@ -14,5 +14,6 @@ def createWordList():
 
 start = time()
 ct =  createWordList()
-print type(ct)
-print time() - start
+#print time() - start
+#print [ str(i)+": "+str(ct[i]) for i in ct if ct[i] > 500 ]
+
