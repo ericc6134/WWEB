@@ -106,7 +106,22 @@ def replace(params):
         oldText = newText
         
     return newText
-        
+
+def placeHolder(params):
+    params['output'] = []
+    for s in params['sentencesToTranslate']:
+        tokens = s.split()
+        for word in params['words']:
+            for i in tokens:
+                if i.lower() == word:
+                    tokens[i] = "placeHolder"
+        t = ""            
+        for i in tokens:
+            t = t + i " "
+            
+        params['output'].append([s,t])
+    
+    return params
 #takes params as a parameter which must include a url, text, or string, as well as a word list
 def newPage(params)
     if params['url']:
@@ -127,6 +142,8 @@ def newPage(params)
     
     #at this point p will be sent to the translate code
     #newData = translate.doSomething(p)
+    
+    p = placeHolder(p)
     
     #this method is not done, for now it returns p; eventually it will return the new page as a string
     return p
