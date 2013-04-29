@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "Babble",
+  "description": "This extension is a language learning tool that translates groups of words into a foreign language as you surf the web.",
+  "version": "1.0",
+
+  "permissions": [
+   
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  }
+}
