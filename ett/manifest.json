@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "One-click Kittens",
-  "description": "This extension demonstrates a browser action with kittens.",
+  "name": "Web Translator",
+  "description": "This extension is a language learning tool that translates groups of words into a foreign language as you surf the web.",
   "version": "1.0",
 
   "permissions": [
