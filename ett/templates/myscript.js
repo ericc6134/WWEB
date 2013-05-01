@@ -58,7 +58,7 @@ for(var i = 0; i < rt1.length; i++){
 
 	var re = new RegExp(rt1[i], "i");
 
-	$("body *").replaceText( re, "<b>" + rt2[i] + "</b>" );
+	$("body *").replaceText( re, "<a href='http://www.spanishdict.com/translate/" + rt2[i] + "/'> <b>" + rt2[i] + "</b></a>" );
 	$("body *").replaceText( "\\F1" , "ñ");
 
 }
