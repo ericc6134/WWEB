@@ -20,11 +20,8 @@
 
   "content_scripts": [
     {
-<<<<<<< HEAD
-      "matches": ["https://*/*"],
-=======
+
       "matches": ["<all_urls>"],
->>>>>>> a6f94d5d2f4cfc8ba5d99be044af240f12bfe7d7
       "js": ["jquery.js", "myscript.js"]
     }
   ]
