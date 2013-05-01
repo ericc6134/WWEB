@@ -2,6 +2,11 @@ from flask import Flask, render_template, session, url_for, request, escape, red
 from functools import wraps
 import database
 
+words = ["Hola","Noticias","Foto","Cosa","Buscar","Contras&#209;a"] 
+#hard coded since python can't interact with the extension
+answers = ["hello","news","photo","thing","search","password"]
+corrects = {}
+
 #configuration
 DEBUG = True
 
@@ -27,11 +32,22 @@ def about():
 
 @app.route("/quiz", methods=['GET','POST'])
 def quiz():
-    words = ["one","dos","third"]
-    if request.method == "GET":
-        pass
-
-    return render_template("quiz.html", words=words)
+    if request.method == "POST":
+        corrects = {}
+        responses = {}
+        for i in range(len(words)):
+            responses[words[i]] = request.form[words[i]]
+            if(request.form[words[i]] == answers[i]):
+                corrects[words[i]] = "correct"
+            else:
+                corrects[words[i]] = "incorrect"
+        color = "blue"
+        return render_template("quiz.html", words=words, color=color, corrects=corrects, responses=responses)
+    else:
+        corrects = {}
+        responses = {}
+        color = "gray"
+        return render_template("quiz.html", words=words, color=color, corrects=corrects, responses=responses)
 
 @app.route("/profile")
 def profile():
