@@ -55,7 +55,7 @@
 	    <h4>Write the translated words in the boxes, then click submit</h4>
           <form name="quiz" method="POST">
 	    {% for word in words %}
-          <span style="color:{{color}}">{{word}}: <input type="text" class="input-medium" name="{{word}}" placeholder="{{responses[word]}}"></span> <b>{{corrects[word]}}</b><br>
+          {{word}}: <input type="text" class="input-medium" name="{{word}}" placeholder="{{responses[word]}}"> <b>{{corrects[word]}}</b><br>
 	    {% endfor %}
 
           <input type="submit" value="Submit" class="btn">

@@ -1,8 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
+
 from flask import Flask, render_template, session, url_for, request, escape, redirect, g
 from functools import wraps
 import database
 
-words = ["Hola","Noticias","Foto","Cosa","Buscar","Contras&#209;a"] 
+words = ["Hola","Noticias","Foto","Cosa","Buscar",u'Contraseña'] 
 #hard coded since python can't interact with the extension
 answers = ["hello","news","photo","thing","search","password"]
 corrects = {}
