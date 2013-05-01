@@ -6,13 +6,13 @@ Instructions:
 Use Chromium or Google Chrome.
 
 
-Clone Repo
-Go to chrome://extensions/
-Check "Developer mode"
-Click "Load unpacked extension"
-Navigate the repo until you get to /ett/
-Inside it, load the folder "templates" (do not load "ett").
-Click the Babble extension icon. It will show a list of words translated (for all urls).
+Clone Repo  
+Go to chrome://extensions/   
+Check "Developer mode"   
+Click "Load unpacked extension"   
+Navigate the repo until you get to /ett/   
+Inside it, load the folder "templates" (do not load "ett").   
+Click the Babble extension icon. It will show a list of words translated (for all urls).     
 
 Translated words will be in bold.
 
