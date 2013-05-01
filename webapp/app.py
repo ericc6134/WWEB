@@ -25,9 +25,13 @@ def contact():
 def about():
     return render_template("about.html")
 
-@app.route("/quiz")
+@app.route("/quiz", methods=['GET','POST'])
 def quiz():
-    return render_template("quiz.html")
+    words = ["one","dos","third"]
+    if request.method == "GET":
+        pass
+
+    return render_template("quiz.html", words=words)
 
 @app.route("/profile")
 def profile():

@@ -54,7 +54,9 @@
           <center>
 	    <h4>Write the translated words in the boxes, then click submit</h4>
           <form name="quiz" method="get">
-          word1: <input type="text" class="input-medium" name="word1"><br>
+	    {% for word in words %}
+          {{word}}: <input type="text" class="input-medium" name="{{word}}"><br>
+	    {% endfor %}
           word2: <input type="text" class="input-medium" name="word2"><br>
 	  word3: <input type="text" class="input-medium" name="word3"><br>
           word4: <input type="text" class="input-medium" name="word4"><br>
