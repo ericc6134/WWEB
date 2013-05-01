@@ -14,6 +14,10 @@
     "default_popup": "popup.html"
   },
 
+"web_accessible_resources": [
+    "/dummy.csv"
+  ],
+
   "content_scripts": [
     {
       "matches": ["http://pear.meteor.com/"],
