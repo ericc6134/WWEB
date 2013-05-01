@@ -1,6 +1,27 @@
 WWEB
 ====
 
+Instructions:
+
+Use Chromium or Google Chrome.
+
+
+Clone Repo  
+Go to chrome://extensions/   
+Check "Developer mode"   
+Click "Load unpacked extension"   
+Navigate the repo until you get to /ett/   
+Inside it, load the folder "templates" (do not load "ett").   
+Click the Babble extension icon. It will show a list of words translated (for all urls).     
+
+Translated words will be in bold.
+
+Unfortunately this app is not really ready, and can only translate a specific group of words. :(
+Still, it's interesting when FB says "so and so commented on your <b>foto</b>."
+
+
+
+
 Win, Wilson, Eric, and Bernie's repo for the final project
 
 <<<<<<< HEAD
