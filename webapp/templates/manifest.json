@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Babble",
+  "description": "This extension is a language learning tool that translates groups of words into a foreign language as you surf the web.",
+  "version": "1.0",
+
+  "permissions": [
+	"notifications"
+   
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+
+"web_accessible_resources": [
+    "/dummy.csv"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["http://pear.meteor.com/"],
+      "js": ["jquery.js", "myscript.js"]
+    }
+  ]
+
+}
