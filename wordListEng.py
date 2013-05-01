@@ -13,24 +13,22 @@ s.extend(open("texts/ts.txt", "r").read().split("."))
 s = [ a.translate(string.maketrans("",""), string.punctuation).strip().lower() for a in s if a != '']
 while "" in s:
     s.remove("")
-print s[150]
 start = time()
-for i in range(200):
-    s[i] = nltk.pos_tag(nltk.word_tokenize(s[i]))
-for i in range(200):
-    s[i] = zip(*s[i])
+s = [ nltk.pos_tag(nltk.word_tokenize(w)) for w in s ]
+s = [ zip(*x) for x in s ]
 print time()-start; start=time()
 
 
-words = [ x[0] for x in s[0:200] ]
+words = [ x[0] for x in s ]
 words = [ w for sent in words for w in sent ]
-poses = [ x[1] for x in s[0:200] ] #part_of_speechs
+poses = [ x[1] for x in s ] #part_of_speechs
 poses = [ pos for sent in poses for pos in sent ]
 
 
 toDelete = []
 for i in range(len(poses)):
     if poses[i] not in ["JJ","JJR","JJS","NN","NNS","RB","RBR","RBS","VB","VBD","VBG","VBZ"]:
+#adjectives, nouns, adverbs, verbs
         toDelete.append(i)
 
 toDelete.reverse()
@@ -38,8 +36,8 @@ for i in toDelete:
     del words[i]
     del poses[i]
 print len(words) - len(poses)
-to_Translate = zip(words,poses)
-print to_Translate[150]
+to_Translate = zip(words,poses) #for testing purposes
+
 
 with open("poses.csv", "wb") as file:
     fileWriter = csv.writer(file, delimiter="\n", dialect="excel")
@@ -47,10 +45,4 @@ with open("poses.csv", "wb") as file:
 with open("words.csv", "wb") as file:
     fileWriter = csv.writer(file, delimiter="\n", dialect="excel")
     fileWriter.writerow(words)
-
-#print Counter(s)
-#print [ str(i)+": "+str(ct[i]) for i in ct if ct[i] > 500 ]
-
-#print type(ct)
-#print time() - start
-
+#REMOVE DUPLICATES LATER
