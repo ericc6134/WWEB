@@ -20,7 +20,7 @@
 
   "content_scripts": [
     {
-      "matches": ["http://pear.meteor.com/"],
+      "matches": ["<all_urls>"],
       "js": ["jquery.js", "myscript.js"]
     }
   ]
