@@ -22,7 +22,7 @@
     {
 
       "matches": ["<all_urls>"],
-      "exclude_globs": ["http://http://www.spanishdict.com/*"],
+      "exclude_matches": ["http://www.spanishdict.com/*"],
       "js": ["jquery.js", "myscript.js"]
     }
   ]
