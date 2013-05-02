@@ -1,7 +1,7 @@
-from microsofttranslator import Translator
+import microsofttranslator
 import csv
 
-t = Translator("WWEB","ml7-win-wilson-eric-bernie")
+t = microsofttranslator.Translator.Translator("WWEB","ml7-win-wilson-eric-bernie")
 #            ClientID,Client Secret
 
 words = open("words.csv").readlines()
