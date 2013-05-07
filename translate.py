@@ -9,4 +9,8 @@ words = [ word.strip() for word in words ]
 with open("engToSpan.csv","w") as csvfile:
     writer = csv.writer(csvfile, delimiter="\n")
     for w in words:
-        writer.writerow( [w + "," + t.translate(w,"es")] )
+        try:
+            writer.writerow( [w + "," + t.translate(w,"es")
+                              .encode("utf-8")] )
+        except:
+            pass
