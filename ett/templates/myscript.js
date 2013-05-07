@@ -15,7 +15,7 @@ console.log("hello");
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: chrome.extension.getURL("/dummy.csv"),
+        url: chrome.extension.getURL("/engToSpan.csv"),
         dataType: "text",
         success: function(data) {processData(data);}
      });
