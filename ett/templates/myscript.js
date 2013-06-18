@@ -1,4 +1,4 @@
-console.log("hello");
+
 
 /*
  * jQuery replaceText - v1.1 - 11/21/2009
@@ -10,16 +10,19 @@ console.log("hello");
  */
 (function($){$.fn.replaceText=function(b,a,c){return this.each(function(){var f=this.firstChild,g,e,d=[];if(f){do{if(f.nodeType===3){g=f.nodeValue;e=g.replace(b,a);if(e!==g){if(!c&&/</.test(e)){$(f).before(e);d.push(f)}else{f.nodeValue=e}}}}while(f=f.nextSibling)}d.length&&$(d).remove()})}})(jQuery);
 
+console.log("hello");
 
 ////// CSV Reader
 $(document).ready(function() {
     $.ajax({
         type: "GET",
-        url: chrome.extension.getURL("/engToSpan.csv"),
+        url: chrome.extension.getURL("/dummy.csv"),
         dataType: "text",
         success: function(data) {processData(data);}
      });
 });
+
+
 
 
 ////// Processing CSV into array
