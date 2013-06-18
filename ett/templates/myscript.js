@@ -43,7 +43,24 @@ function processData(allText) {
 		entries.push(allTextLines[i].split(','));
 		console.log(entries[i]);
 	}
+
+	
 	console.log(entries);
+	console.log('entries finished');
+
+	localStorage['quizWords'] = [];
+	localStorage['quizWords'] = entries;
+	console.log(localStorage['quizWords']);
+
+	var e2 = [];
+	var e2t = localStorage['quizWords'].split(',');
+
+	for(var i = 0; i < e2t.length; i = i+2){
+		e2.push(e2t[i]);
+	}
+
+	console.log(e2);
+
 
 ////////// Processing "entries" into 2 arrays (rt1 = before, rt2 = after)
 	
@@ -54,7 +71,7 @@ function processData(allText) {
 		rt2.push(entries[i][1]);
 	}
 
-
+	console.log(rt1);
 /////// Replace
 
 for(var i = 0; i < rt1.length; i++){

@@ -33,7 +33,7 @@ function processData(allText) {
 		
 		ans = ans + entries[i][0] + ", " + entries[i][1] + "<br />";
 	};
-
+localStorage['quizWords'] = entries;
 localStorage['entries'] = ans;
    $("#twords").html(ans);
 }
@@ -65,23 +65,34 @@ function nextWords() {
 
 	$('#nextWords').click(function() { return false; });
 
+
+	var engWords = [];
+	var spanWords = [];
+	var tempArr = localStorage['quizWords'].split(',');
+
+	for(var i = 0; i < tempArr.length; i = i+2){
+		engWords.push(tempArr[i]);
+	};
+
+	for(var i = 1; i < tempArr.length; i = i+2){
+		spanWords.push(tempArr[i]);
+	};
+	
+
+
 	$("#quizDiv").html('<center>\n\
 	    <h4>Write the translated words in the boxes, then click submit</h4>\n\
-          <form name="quiz" method="get">\n\
-          word1: <input type="text" class="input-medium" name="word1"><br>\n\
-          word2: <input type="text" class="input-medium" name="word2"><br>\n\
-	  word3: <input type="text" class="input-medium" name="word3"><br>\n\
-          word4: <input type="text" class="input-medium" name="word4"><br>\n\
-	  word5: <input type="text" class="input-medium" name="word5"><br>\n\
-          word6: <input type="text" class="input-medium" name="word6"><br>\n\
-	  word7: <input type="text" class="input-medium" name="word7"><br>\n\
-          word8: <input type="text" class="input-medium" name="word8"><br>\n\
-	   \n\
+	' + engWords[0] + ': <input id="w1" type="text" class="input-medium" name="word1" /><p id="r1"></p><br />\n\
+	' + engWords[1] + ': <input id="w2" type="text" class="input-medium" name="word2" /><p id="r2"></p><br />\n\
+	' + engWords[2] + ': <input id="w3" type="text" class="input-medium" name="word3" /><p id="r3"></p><br />\n\
+	' + engWords[3] + ': <input id="w4" type="text" class="input-medium" name="word4" /><p id="r4"></p><br />\n\
+	' + engWords[4] + ': <input id="w5" type="text" class="input-medium" name="word5" /><p id="r5"></p><br />\n\
+	' + engWords[5] + ': <input id="w6" type="text" class="input-medium" name="word6" /><p id="r6"></p><br />\n\
           <input type="button" id="submitQuiz" value="Submit" class="btn" />\n\
-          </form>\n\
          </center>');
 
 	$("#submitQuiz").click(submitQuiz);
+
 
 }
 
@@ -90,10 +101,25 @@ function seePast() {
 
 }
 
-function submitQuiz() {
+function submitQuiz(){
+	$("#quizDiv").html('<button id="nextWords">Move On! (Take a Quiz)</button>');
+	$("#nextWords").click(nextWords);
+	for( var i = 0; i < 6; i ++){
+				
+		
+	}
+
+}
+
+function submitQuizYes() {
+
+
 	$("#quizDiv").html('<button id="nextWords">Move On! (Take a Quiz)</button>');
 	$("#nextWords").click(nextWords);
 	$("#past").html(localStorage['entries']);
-	localStorage['rt1'] = localStorage['rt1'] + localStorage['entries'];
+	//localStorage['rt1'] = localStorage['rt1'] + localStorage['entries'];
+	localStorage['rt1'] = localStorage['entries'];
+
+
 }
 
